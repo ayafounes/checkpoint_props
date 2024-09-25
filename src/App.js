@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import CardComp from './card'; // Make sure this is the correct path to your card component
+import {players} from './players'; // Import the players array from players.js
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'flex-start', margin: '20px' }}>
+      {players.map((player, index) => (
+        <CardComp 
+          key={index}
+          
+          nationality={player.nationality}
+          team={player.team}
+          number={player.number}
+          age={player.age}
+          image={player.image} 
+        />
+      ))}
     </div>
   );
 }
