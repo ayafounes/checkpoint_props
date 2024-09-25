@@ -10,7 +10,7 @@ function App() {
       {players.map((player, index) => (
         <CardComp 
           key={index}
-          
+          name={player.name}
           nationality={player.nationality}
           team={player.team}
           number={player.number}
